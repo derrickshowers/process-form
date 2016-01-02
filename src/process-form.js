@@ -13,8 +13,8 @@ function isFieldEmpty(el) {
 function ProcessForm(formEl, types, successCallback, errorCallback) {
   this.$formEl = $(formEl);
   let formElements = this.$formEl.find(types);
-  this.successCallback = successCallback || () => {};
-  this.errorCallback = errorCallback || () => {};
+  this.successCallback = successCallback;
+  this.errorCallback = errorCallback;
   _.bindAll(this, 'successCallback', 'errorCallback');
   this.formElementsObj = formElements.map((i, el) => {
     return {

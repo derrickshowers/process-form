@@ -1,2 +1,5 @@
 node_modules
 .gitignore
+src
+gulpfile.js
+webpack.config.js
