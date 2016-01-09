@@ -4,7 +4,7 @@ Need to put together a quick form, but don't want to have to worry about validat
 
 ## Installation
 
-Source has been transpiled into ES5 using `module.exports` syntax. You will need some sort of build process to get it working in the browser. This is super easy if using [webpack](https://webpack.github.io/) - just include it as a dependency and webpack should take care of the rest. Optionally, you can also check out [browserify](http://browserify.org/).
+Source has been transpiled into ES5 using the [UMD API](https://github.com/umdjs/umd) - meaning, you can consume it via npm using something like [webpack](https://webpack.github.io/) or just throw it into a `<script>` tag on your page (using the `ProcessForm` namespace).
 
 ## Implementation
 
@@ -12,7 +12,9 @@ Module will take care of adding event listeners and all the validation (adds an 
 
 ```javascript
 // Get the module - syntax dependent upon your setup
-var ProcessForm = require('process-form');
+var ProcessForm = require('process-form');    // Common JS
+import ProcessForm from 'process-form';       // ES6
+var ProcessForm = window.ProcessForm;         // Global
 
 // Set your form element (can be either a jQuery object or DOM node)
 var formEl = $('.contact-form')
